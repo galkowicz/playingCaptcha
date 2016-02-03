@@ -11,8 +11,7 @@ import xml.etree.cElementTree as ET
 class Spider():
 
     #__phantom = webdriver.PhantomJS(executable_path='C:/Users/orian/PycharmProjects/Penny/node_modules/phantomjs/bin/phantomjs.exe')
-    __phantom = webdriver.Firefox()
-    page = 0
+    #__phantom = webdriver.Firefox()
 
 
     def extractCaptch(self):
@@ -68,40 +67,44 @@ class Spider():
 
     def navigate(self):
         last_page_xpath = '//*[@id="cards"]/div[2]/a[2]'
-        url = "https://carder007.org/cards.php?category_id=4&stagnant=&txtBin=&page=" + str(self.page)
+        url = "https://carder007.org/cards.php?category_id=4&stagnant=&txtBin=&page=0"
         self.__phantom.get(url)
         last_page = self.__phantom.find_element_by_xpath(last_page_xpath).text
         return last_page
 
     def table_traverse(self, page):
-
+        data = []
         url = "https://carder007.org/cards.php?category_id=4&stagnant=&txtBin=&page=" + str(page)
         self.__phantom.get(url)
-        data = []
+        jump = True
         for tr in self.__phantom.find_elements_by_xpath('//table[@class="content_table borderstyle td_border"]//tr'):
+            if (jump):
+                jump = False
+                continue
             tds = tr.find_elements_by_tag_name('td')
             if tds:
+                print(page)
                 data.append([td.text for td in tds])
+        return data
 
-        print(data)
-
-
-
-
-
-
+    def create_xml(self):
+        tree = ET.parse('cards.xml')
+        root = tree.getroot()
+        print(root.tag)
 
 
 def main():
 
     spider = Spider()
+    '''
     spider.extractCaptch()
     spider.login()
 
     last_page = int(spider.navigate())
     for i in range(0, last_page+1):
         spider.table_traverse(i)
-
+    '''
+    spider.create_xml()
 
 
 if __name__=='__main__':

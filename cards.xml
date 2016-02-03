@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?><cards>
+	<record id="0">
+		<CARDT>Idola</CARDT>
+		<CARD_NUMBER>Rhoda Martinez</CARD_NUMBER>
+		<BANK>Beck</BANK>
+		<FULL_NAME>Briar</FULL_NAME>
+		<CITY_STATE_ZIP>Kaitlin Herring</CITY_STATE_ZIP>
+		<COUNTRY>Kasimir Underwood</COUNTRY>
+		<SELLER>Tyler Y. Mcintyre</SELLER>
+		<SSN>Stark</SSN>
+		<DOB>Nevada, Chase, Renee, Dustin</DOB>
+		<PRICE>Francesca Robles</PRICE>
+    </record>
+    <record id="1">
+		<CARDT>Kelly</CARDT>
+		<CARD_NUMBER>Jescie Forbes</CARD_NUMBER>
+		<BANK>Sandra</BANK>
+		<FULL_NAME>Shana</FULL_NAME>
+		<CITY_STATE_ZIP>Laura Chang</CITY_STATE_ZIP>
+		<COUNTRY>Deacon Strickland</COUNTRY>
+		<SELLER>Reese N. Welch</SELLER>
+		<SSN>Daniels</SSN>
+		<DOB>Keith, Travis, Kylynn, Thor</DOB>
+		<PRICE>Elizabeth H. Richard</PRICE>
+	    </record>
+</cards>
